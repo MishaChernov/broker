@@ -1,0 +1,131 @@
+.features {
+  margin-top: -80px;
+  color: $color-white;
+}
+
+.features__cards {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 85px;
+}
+
+.features__item {
+  position: relative;
+  background-color: $color-white;
+  color: $color-black;
+  width: 270px;
+  box-sizing: border-box;
+  padding: 0 5px;
+  margin: 20px;
+  text-align: center;
+  padding-top: 81px;
+  padding-bottom: 34px;
+
+  svg {
+    filter: drop-shadow( -5px -5px 5px #000 );
+  }
+
+  h3 {
+    display: block;
+    padding: 0 2px;
+    font-size: 30px;
+    font-weight: bold;
+    color: $color-blue;
+    margin-bottom: 33px;
+  }
+  p {
+    padding: 0 14px;
+    line-height: 24px;
+    color: #333132;
+    font-size: 20px;
+    margin-bottom: 40px;
+    letter-spacing: 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -47px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 135px;
+    height: 160px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: drop-shadow( -5px 5px 6px rgba(0, 0, 0, 0.3) );
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:nth-child(1) {
+    &::before {
+      left: 51%;
+      width: 101px;
+      height: 121px;
+      background-image: url('../img/features-icon-1.svg');
+    }
+  }
+  &:nth-child(2) {
+    h3 {
+      padding: 0px;
+    }
+    &::before {
+      left: 54%;
+      width: 112px;
+      height: 119px;
+      background-image: url('../img/features-icon-2.svg');
+    }
+  }
+  &:nth-child(3) {
+    &::before {
+      left: 52%;
+      width: 100px;
+      height: 119px;
+      background-image: url('../img/features-icon-3.svg');
+    }
+  }
+  &:nth-child(4) {
+    &::before {
+      left: 53%;
+      width: 99px;
+      height: 117px;
+      background-image: url('../img/features-icon-4.svg');
+    }
+  }
+}
+
+.features__info {
+  margin-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  color: $color-white;
+  align-items: center;
+
+  h2 {
+    flex: 1;
+    line-height: 59px;
+    font-size: 50px;
+    margin-right: 20px;
+    letter-spacing: 0;
+  }
+  p {
+    margin-left: 20px;
+    line-height: 37px;
+    font-size: 30px;
+    color: $color-white;
+    flex: 1;
+    letter-spacing: 0;
+  }
+  img {
+    margin-top: 112px;
+    margin-bottom: -40px;
+    width: 100%;
+  }
+}

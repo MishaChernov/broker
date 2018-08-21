@@ -1,0 +1,148 @@
+.questions {
+  padding-bottom: 90px;
+  margin-top: 0;
+  padding-top: 71px;
+}
+
+.questions__item {
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+  padding: 25px 0;
+  padding-bottom: 26px;
+  cursor: pointer;
+  border-bottom: 1px solid #d1d2d4;
+
+  @include transition(200ms);
+  transition-timing-function: linear;
+
+  &:hover {
+    // animation-name: questionsHover;
+    // animation-duration: 0.2s;
+    h5 {
+      color: $color-green;
+      @include transition(150ms);
+      transition-timing-function: linear;
+    }
+  }
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.questions__title {
+  letter-spacing: 0;
+  font-size: 30px;
+  margin-top: 0;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.questions__subtitle {
+  position: relative;
+  padding: 0;
+  padding-right: 42px;
+  margin: 0;
+  user-select: none;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 22px;
+  margin: 0;
+  letter-spacing: 0;
+  color: #263139;
+  @include transition(150ms);
+  transition-timing-function: linear;
+
+  &--active {
+    color: $color-green;
+  }
+}
+
+.questions__text {
+  max-width: 890px;
+  padding: 0;
+  padding-right: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+  letter-spacing: 0;
+  line-height: 19px;
+  font-size: 16px;
+  color: $color-black;
+  @include transition(150ms);
+  transition-timing-function: linear;
+  max-height: 0;
+  opacity: 0;
+  transform: translate( 0 , -20% );
+
+  &--visually {
+    @include transition(150ms);
+    transition-timing-function: linear;
+    position: relative;
+    overflow: hidden;
+    max-height: 300px;
+    opacity: 1;
+    transform: translate( 0 , 0 );
+    padding-top: 20px;
+  }
+  &--hidden {
+    @include transition(150ms);
+    transition-timing-function: linear;
+    margin-top: 0;
+    max-height: 0;
+    opacity: 0;
+    transform: translate( 0 , -20% );
+  }
+}
+
+.questions__btn {
+  position: absolute;
+  top: 25px;
+  right:  0px;
+
+  display: block;
+  width: 15px;
+  height: 15px;
+
+  font-size: 0;
+
+  background: none;
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+
+  @include transition(300ms);
+  transition-timing-function: linear;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    right: 0;
+
+    display: block;
+    width: 16px;
+    height: 2px;
+
+    background-color: $color-green;
+    cursor: pointer;
+    @include transition(300ms);
+    transition-timing-function: linear;
+  }
+  &::after {
+    transform: rotate(90deg);
+    @include transition(300ms);
+    transition-timing-function: linear;
+  }
+  &--opened {
+    cursor: default;
+
+    &::before {
+      background-color: $color-purple;
+    }
+    &::after {
+      display: none;
+    }
+  }
+}

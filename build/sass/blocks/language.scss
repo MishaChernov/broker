@@ -1,0 +1,140 @@
+.language {
+  display: block;
+  width: 27px;
+  height: 20px;
+  margin: 0 4px;
+  font-size: 0;
+  background-image: url("../img/languages.png");
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &--german {
+    background-position: -9px -8px;
+  }
+  &--kingdom {
+    background-position: -43px -8px;
+  }
+  &--poland {
+    background-position: -77px -8px;
+  }
+}
+
+.language__wrapper {
+  position: relative;
+}
+
+.language__btn {
+  background: none;
+  text-align: center;
+  outline: none;
+  border: none;
+  font-size: 0px;
+  padding: 10.5px 8px;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  height: 40px;
+  border: 1px solid darkgray;
+  outline: 1px solid #cccccc;
+  outline-offset: -1px;
+  cursor: pointer;
+  box-sizing: border-box;
+
+  i {
+    margin: 0 7px;
+    width: 23px;
+    height: 15px;
+
+    @include transition(300ms);
+  }
+}
+
+.language__list {
+  z-index: 1;
+  position: absolute;
+  top: 65px;
+  width: 100%;
+  display: none;
+  background-color: $color-white;
+
+  font-size: 14px;
+  font-family: "Gilroy", "Arial", sans-serif;
+  font-weight: bold;
+  color: #8a8c8f;
+  text-transform: uppercase;
+  text-align-last: center;
+  box-shadow: 0 8px 13px rgba(0, 0, 0, 0.2);
+
+  &--open {
+    display: block;
+  }
+}
+
+.language__item {
+  display: flex;
+  padding: 10.5px 8px;
+  box-sizing: border-box;
+  height: 39px;
+  cursor: pointer;
+
+  &:nth-child(odd) {
+    background-color: #f4f5f9;
+    border-bottom: 1px solid #cccccc;
+  }
+
+  &:hover {
+    div {
+      color: $color-black;
+    }
+  }
+  .language__checkbox {
+    display: none;
+  }
+  .language__checkbox:checked ~ .language__name {
+    color: $color-black;
+    &::after {
+      display: block;
+    }
+  }
+  i {
+    width: 23px;
+    height: 15px;
+    margin-left: auto;
+    margin-right: 4px;
+  }
+}
+
+.language__name {
+  position: relative;
+  padding-top: 3px;
+  padding-left: 30px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  user-select: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid $color-gray;
+  }
+  &::after {
+    content: "\2714";
+    position: absolute;
+    left: 4px;
+    top: 10px;
+    transform: translateY(-50%);
+    display: none;
+    width: 15px;
+    height: 15px;
+    font-size: 10px;
+    color: $color-gray;
+  }
+}

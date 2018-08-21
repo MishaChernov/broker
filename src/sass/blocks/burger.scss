@@ -1,0 +1,66 @@
+#burger {
+  display: none;
+}
+
+.burger span:nth-of-type(3) {
+  transform: translateY(5px);
+}
+.burger span:nth-of-type(1) {
+  transform: translateY(-5px);
+}
+
+
+.burger {
+  z-index: 999;
+  position: absolute;
+  top: 12px;
+  right: 0px;
+  display: flex;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 35px;
+  height: 25px;
+  border-radius: 50%;
+  transition: transform 250ms ease;
+  cursor: pointer;
+  animation-name: show-from-up;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: both;
+
+  &--open {
+    transform: rotate(360deg);
+    transition: transform 250ms ease;
+    background-color: transparent;
+
+    span {
+      background-color: $color-green;
+      transition: transform 250ms ease;
+
+      &:nth-of-type(2) {
+        display: none;
+      }
+      &:nth-of-type(1) {
+        transform: translateY(1px) rotate(45deg);
+      }
+      &:nth-of-type(3) {
+        transform: translateY(-1px) rotate(-45deg);
+      }
+    }
+  }
+}
+
+.burger span {
+  z-index: 300;
+  position: relative;
+  display: block;
+  width: 50%;
+  height: 2px;
+  background-color: $color-green;
+
+  float: left;
+  transform-origin: center center;
+  transition: transform 250ms ease;
+}

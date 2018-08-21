@@ -1,0 +1,310 @@
+.deal-card {
+  margin-top: 10px;
+}
+
+.deal-card__wrapper {
+
+}
+
+.stiсker {
+  position: absolute;
+  top: 11px;
+  left: -10px;
+  display: none;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: "Campton", "Arial", sans-serif;
+  line-height: 18px;
+  padding: 0 10px;
+  letter-spacing: 0.2px;
+
+  span {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -11.7px;
+      left: -10px;
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 10px 10px 0;
+      border-color: transparent #a8a9a9 transparent transparent;
+
+    }
+  }
+}
+
+.deal-card__item {
+  display: flex;
+  width: 100%;
+  flex-basis: 100%;
+  flex-wrap: nowrap;
+  background-color: $color-white;
+  margin: 30px 0;
+  margin-bottom: 10px;
+
+  img {
+    margin-right: 20px;
+    min-width: 180px;
+    width: auto;
+  }
+
+  &--label {
+    .stiсker {
+      display: block;
+    }
+  }
+  &--off {
+    position: relative;
+    background-color: $color-bg-card-off;
+
+    .deal-card__description  {
+      p {
+        color: $color-gray !important;
+        span {
+          color: $color-gray !important;
+        }
+      }
+    }
+    p {
+      span {
+        color: $color-gray !important;
+      }
+      b {
+        color: $color-gray !important;
+      }
+    }
+  }
+}
+
+
+.btn--off {
+  font-size: 14px !important;
+  color: $color-gray !important;
+  @include transition(300ms);
+
+  svg {
+    display: none !important;
+  }
+  span {
+    font-size: 14px !important;
+  }
+  &:hover {
+    @include transition(300ms);
+    background-color: lighten($color-gray, 20%) !important;
+    opacity: 1 !important;
+
+    span {
+      color: $color-white !important;
+    }
+  }
+}
+
+
+.deal-card__info {
+  display: flex;
+  width: 100%;
+}
+
+.deal-card__borrower-item {
+  position: relative;
+  padding-left: 50px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0;
+    display: block;
+    width: 39px;
+    height: 39px;
+    background-color: $color-gray;
+    border: 1px solid $color-white;
+    border-radius: 50%;
+    background-image: url("../img/lock-icon.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+  }
+}
+
+.deal-card__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &--description {
+    padding-top: 6px;
+    padding-right: 61px;
+
+    p {
+      &:nth-of-type(2) {
+        width: 166px;
+
+        b {
+          letter-spacing: 0;
+        }
+      }
+    }
+  }
+  &--controls {
+    flex-direction: column;
+    margin-left: auto;
+    max-width: 270px;
+
+    p {
+      width: 270px;
+      display: block;
+      margin: 0;
+      text-align: center;
+      flex: 1;
+      border: 1px solid #f1f2f2;
+      box-sizing: border-box;
+
+      span {
+        line-height: 8px;
+      }
+      &:first-child {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        border-top: none;
+      }
+
+      &:last-child {
+        border-top: none;
+        border-bottom: none;
+
+        .btn {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          min-height: 57px;
+          width: 100%;
+          height: 100%;
+          box-sizing: border-box;
+          background-color: transparent;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          color: $color-green;
+          max-width: 100%;
+          font-size: 20px;
+          letter-spacing: -0px;
+          padding: 0;
+
+          span {
+            margin-bottom: 0;
+            color: $color-green;
+            font-size: 20px;
+            letter-spacing: 1px;
+            &::after {
+              display: none;
+            }
+            svg {
+              right: -75px;
+            }
+          }
+          &:hover {
+            background-color: $color-green;
+
+            span {
+              color: $color-white;
+            }
+
+            &::after {
+              color: $color-white;
+            }
+          }
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+  p {
+
+    span {
+      font-family: $primary-font-family;
+      font-size: 10px;
+      margin-bottom: 5px;
+      color: $color-gray;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    b {
+      display: block;
+      font-family: $primary-font-family;
+      font-size: 20px;
+      margin-top: 2px;
+      color: #333132;
+      font-weight: 300;
+      letter-spacing: 0;
+    }
+  }
+}
+
+.deal-card__borrower {
+  letter-spacing: -0 !important;
+  color: $color-black !important;
+  font-weight: bold !important;
+}
+
+.deal-card__time {
+  color: $color-purple !important;
+  font-weight: bold !important;
+  margin-top: 6px;
+
+  &--color {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    color: #f2744d !important;
+  }
+}
+
+.deal-card__description {
+  width: 100%;
+  margin-top: 20px;
+  align-items: center;
+  align-content: center;
+
+  span {
+    font-family: $primary-font-family;
+    font-size: 10px;
+    color: $color-gray;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+  }
+  p {
+    margin-top: 2px;
+    margin-bottom: 12px;
+    font-family: $primary-font-family;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 300;
+    letter-spacing: 0;
+    max-width: 510px;
+
+    span {
+      font-family: $primary-font-family;
+      font-size: 20px;
+      font-weight: 300;
+      text-transform: lowercase;
+      letter-spacing: 0.5px;
+      color: $color-green;
+    }
+  }
+}
